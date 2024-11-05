@@ -1,5 +1,7 @@
 <?php
 
+require "src/Views/Admin/AdminView.php";
+
 class AdminController {
     public function main(){
         $action = $_GET['acao'] ?? null;
@@ -12,6 +14,6 @@ class AdminController {
     }
 
     private function dashboard() {
-        require "src/Views/Admin/Dashboard.html";
+        view("Dashboard");
     }
 }
