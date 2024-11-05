@@ -32,7 +32,7 @@ class UsersController {
                 $logged_user = $user [0];
 
                 if($logged_user['password'] == $password){
-                    echo "Acerto MISERAVI";
+                    header("location: /?pagina=admin");
                     exit;
                 }
             }
