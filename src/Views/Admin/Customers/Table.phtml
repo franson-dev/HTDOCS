@@ -1,0 +1,34 @@
+<div class="container p-5">
+    <div class="d-flex justify-content-end">
+        <a href="/?pagina=clientes&acao=adicionar" class="btn brn-outline-primary">
+            Adicionar novo cliente
+        </a>
+    </div>
+    <hr> 
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">RG</th>
+        <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($table as $costumer): ?>
+        <tr>
+            <th scope="row"><?= $costumer['id'] ?></th>
+            <td><?= $costumer['nome'] ?></td>
+            <td><?= $costumer['rg'] ?></td>
+            <td width=200>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-primary">Editar</button>
+                    <button type="button" class="btn btn-outline-primary">Excluir</button>
+                </div>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+    </table>
+
+</div>

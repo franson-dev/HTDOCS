@@ -17,4 +17,9 @@ class Model extends Database {
     
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function delete($id){
+        $result = $this->connection->query("DELETE FROM $this->tableName WHERE id = $id");
+        return $result;
+    }
 }
