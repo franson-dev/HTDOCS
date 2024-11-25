@@ -33,3 +33,10 @@ create table pedidos (
     foreign key (clientes_id) references clientes(id),
     foreign key (produto_id) references produtos(id)
 );
+
+create table relatorios (
+    id integer auto_increment primary key,
+    nome varchar(64),
+    setor varchar(64),
+    data date 
+);
