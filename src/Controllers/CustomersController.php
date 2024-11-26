@@ -1,9 +1,9 @@
 <?php 
 
     require_once "src/Views/Admin/AdminView.php";
-    require_once "src/Models/Costumer.php";
+    require_once "src/Models/Customer.php";
 
-class CostumersController {
+class CustomersController {
     public function main(){
         $action = $_GET['acao'] ?? null;
 
@@ -22,20 +22,24 @@ class CostumersController {
     }
 
     private function table(){
-        $model = new Costumer();
+        $model = new Customer();
 
         $tableData = $model->all();
 
-        view('Costumers/Table', [
+        view('Customers/Table', [
             "table" => $tableData
         ]);
+    }
+
+    private function form(){
+        view('Customers/Form');
     }
 
     private function save(){
         $name = $_POST['name'];
         $rg = $_POST['rg'];
 
-        $model = new Costumer();
+        $model = new Customer();
         
         $model->insert($name, $rg);
 

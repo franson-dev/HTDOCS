@@ -3,32 +3,35 @@
     $page = $_GET['pagina'] ?? null;
 
     switch($page){
+        case 'relatorios':
+            require "src/Controllers/ReportsController.php";
+            $controller = new ReportsController();
+            break;
 
         case 'clientes':
-            require "src/Controllers/CostumersController.php";
-            $controller = new CostumersController();
+            require "src/Controllers/CustomersController.php";
+            $controller = new CustomersController();
             break;
-    
+
+        case 'pedidos':
+            require "src/Controllers/OrdersController.php";
+            $controller = new OrdersController();
+            break;
 
         case 'admin':
             require "src/Controllers/AdminController.php";
             $controller = new AdminController();
             break;
-        
+
         case 'usuario':
-            require'src/Controllers/UsersController.php';
+            require 'src/Controllers/UsersController.php';
             $controller = new UsersController();
             break;
 
-        case 'relatorios':
-            require'src/Controllers/ReportsController.php';
-            $controller = new ReportsController();
-            break;
-            
-        default;
+        default:
             require 'src/Controllers/StaticController.php';
-            $controller = new StaticController();   
+            $controller = new StaticController();
     }
 
 
-    $controller->main();
+$controller->main();

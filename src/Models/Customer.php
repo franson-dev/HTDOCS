@@ -1,8 +1,8 @@
 <?php
 
-    require_once "src/Models/Model.php";
+    require_once "src/Models/Models.php";
 
-    class Costumer extends Model {
+    class Customer extends Model {
         protected $tableName = 'Clientes';
 
         public function insert($name, $rg){
