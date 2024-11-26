@@ -8,11 +8,7 @@
             require "src/Controllers/CostumersController.php";
             $controller = new CostumersController();
             break;
-        
-        case 'pedidos':
-            require "src/Controllers/OrderController.php";
-            $controller = new OrdersController();
-            break;
+    
 
         case 'admin':
             require "src/Controllers/AdminController.php";
@@ -23,6 +19,12 @@
             require'src/Controllers/UsersController.php';
             $controller = new UsersController();
             break;
+
+        case 'relatorios':
+            require'src/Controllers/ReportsController.php';
+            $controller = new ReportsController();
+            break;
+            
         default;
             require 'src/Controllers/StaticController.php';
             $controller = new StaticController();   

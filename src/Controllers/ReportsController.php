@@ -9,6 +9,10 @@ class ReportsController {
             case 'salvar':
                 $this->save();
                 break;
+
+            case 'formulario':
+                $this->form();
+                break;
             
             default:
                 # code...
@@ -16,10 +20,15 @@ class ReportsController {
         }
     }
 
+    private function form() {
+        require_once "src/Views/Admin/AdminView.php";
+        view('Reports/Form');
+    }
+
     private function save(){
-        $name = $_GET['nome'];
-        $sector = $_GET['setor'];
-        $date = $_GET['data'];
+        $name = $_POST['nome'];
+        $sector = $_POST['setor'];
+        $date = $_POST['data'];
     
         include_once "src/Models/Report.php";
         $model = new Report();

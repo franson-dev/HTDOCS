@@ -1,11 +1,14 @@
 <?php
 
-include_once "Model_php";
+include_once "Models.php";
 
-class Report extends Model {
+class Report extends Model
+{
+
     protected $tableName = 'relatorios';
 
-    public function insert($nome, $setor, $data) {
+    public function insert($nome, $setor, $data)
+    {
         $result = $this->connection->query("INSERT INTO $this->tableName (nome, setor, data) values ('$nome', '$setor', '$data')");
         return $result;
     }
