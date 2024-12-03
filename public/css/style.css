@@ -22,6 +22,10 @@ a:active {
     color: var(--cor-clara);
 }
 
+nav {
+    border: 1px solid black;
+}
+
 nav ul {
     display: flex;
     justify-content: space-around;
@@ -31,6 +35,17 @@ nav ul {
 nav ul li ul {
     display: none;
     position: absolute;
+}
+
+nav ul li ul div {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-height: 100px;
+    justify-content: space-evenly;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 nav ul li:hover ul {

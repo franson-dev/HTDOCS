@@ -45,4 +45,13 @@ class CustomersController {
 
         $this->table();
     }
+
+    Private function delete(){
+        $id = $_POST['id'];
+        $model = new Customer();
+
+        $model->delete($id);
+
+        $this->table();
+    }
 }
